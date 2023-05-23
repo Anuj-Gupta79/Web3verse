@@ -1,0 +1,5 @@
+runtime: python39
+entrypoint: gunicorn -b :$PORT ethereum_app.wsgi
+
+env_variables:
+  DJANGO_SETTINGS_MODULE: "ethereum_app.settings"

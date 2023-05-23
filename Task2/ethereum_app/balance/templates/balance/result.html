@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ethereum Balance Result</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 40px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #007bff;
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+        
+        h3 {
+            font-size: 24px;
+            color: #343a40;
+            margin-bottom: 20px;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        li {
+            font-size: 18px;
+            color: #6c757d;
+            margin-bottom: 10px;
+        }
+        
+        li::before {
+            content: "\2022";
+            color: #007bff;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ethereum Balance Result</h1>
+        <h3>Balance: {{ data.balance }}</h3>
+        <h3>Recent Transactions:</h3>
+        <ul>
+            {% for transaction in data.transactions %}
+            <li>{{ transaction }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
